@@ -24,7 +24,11 @@
 
 {# -------HEADER / NAVBAR------- #}
 <header>
-    {% include '_includes/_navbar.html.twig' %}
+    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+        {% include '_includes/_navbar_online.html.twig' %}
+    {% else %}
+        {% include '_includes/_navbar_offline.html.twig' %}
+    {% endif %}
 </header>
 
 {# -------MAIN------- #}

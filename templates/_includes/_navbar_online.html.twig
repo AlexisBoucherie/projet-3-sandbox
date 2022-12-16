@@ -29,11 +29,13 @@
 
         {# -------NAV-LOGIN------- #}
         <div class="nav-links d-flex col">
+            {% if user.username %}
+                <p>Bonjour, {{ user.name }}</p>
+            {% else %}
+                <p>{{ user.email }}</p>
+            {% endif %}
             <a class="nav-link" href="#">
-                <button type="button" class="btn btn-outline-info">Inscription</button>
-            </a>
-            <a class="nav-link" href="#">
-                <button type="button" class="btn btn-info">Connexion</button>
+                <button type="button" class="btn btn-info">Déconnexion</button>
             </a>
         </div>
     </div>
